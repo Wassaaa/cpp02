@@ -26,23 +26,6 @@ Fixed &Fixed::operator=(const Fixed &other)
 	return *this;
 }
 
-Fixed::Fixed(Fixed &&other) noexcept
-{
-	std::cout << "Move Constructor called\n";
-	number = other.number;
-	other.number = 0;
-}
-
-Fixed &Fixed::operator=(Fixed &&other) noexcept
-{
-	std::cout << "Move Assignment Operator called\n";
-	if (this == &other)
-		return *this;
-	number = other.number;
-	other.number = 0;
-	return *this;
-}
-
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called\n";
