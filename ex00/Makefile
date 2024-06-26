@@ -6,7 +6,7 @@
 #    By: aklein <aklein@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/16 17:15:14 by aklein            #+#    #+#              #
-#    Updated: 2024/06/24 15:25:57 by aklein           ###   ########.fr        #
+#    Updated: 2024/06/26 18:37:47 by aklein           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DB_FLAGS			=	-g
 OBJ_DIR				=	./obj
 SRC_DIR				=	.
 
-CCF_STRICT			=	-Wall -Wextra -Werror -g
+CCF_STRICT			=	-Wall -Wextra -Werror -g -O0
 
 SRCS				=	 \
 						main.cpp \
