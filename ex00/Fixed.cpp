@@ -2,13 +2,13 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called";
+	std::cout << "Default constructor called\n";
 	number = 0;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called";
+	std::cout << "Destructor called\n";
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -41,4 +41,15 @@ Fixed &Fixed::operator=(Fixed &&other) noexcept
 	number = other.number;
 	other.number = 0;
 	return *this;
+}
+
+int Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member function called\n";
+    return number;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	number = raw;
 }
