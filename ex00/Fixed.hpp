@@ -10,8 +10,6 @@ public:
 	~Fixed();
 	Fixed(const Fixed& other);
 	Fixed& operator=(const Fixed& other);
-	Fixed(Fixed&& other) noexcept;
-	Fixed& operator=(Fixed&& other) noexcept;
 	int		getRawBits(void) const;
 	void 	setRawBits(int const raw);
 
