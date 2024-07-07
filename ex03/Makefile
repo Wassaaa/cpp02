@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aklein <aklein@student.42.fr>              +#+  +:+       +#+         #
+#    By: aklein <aklein@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/16 17:15:14 by aklein            #+#    #+#              #
-#    Updated: 2024/07/07 22:37:33 by aklein           ###   ########.fr        #
+#    Updated: 2024/07/08 01:39:20 by aklein           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS				=	 \
 						main.cpp \
 						Fixed.cpp \
 						Point.cpp \
+						bsp.cpp \
 
 OBJECTS				=	$(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
