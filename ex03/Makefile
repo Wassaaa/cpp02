@@ -6,7 +6,7 @@
 #    By: aklein <aklein@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/16 17:15:14 by aklein            #+#    #+#              #
-#    Updated: 2024/07/07 21:41:44 by aklein           ###   ########.fr        #
+#    Updated: 2024/07/07 22:37:33 by aklein           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ CCF_STRICT			=	-Wall -Wextra -Werror -g
 SRCS				=	 \
 						main.cpp \
 						Fixed.cpp \
+						Point.cpp \
 
 OBJECTS				=	$(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
