@@ -29,7 +29,7 @@ Fixed::Fixed(const Fixed& other)
 	number = other.number;
 }
 
-Fixed &Fixed::operator=(const Fixed &other)
+Fixed& Fixed::operator=(const Fixed &other)
 {
     std::cout << "Copy Assignment Operator called\n";
 	if (this == &other)
