@@ -1,23 +1,29 @@
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-
-Fixed area(Point const a, Point const b, Point const c)
+Fixed crossProduct(const Point& a, const Point& b, const Point& c)
 {
-	Fixed first = a.getX() * (b.getY() - c.getY());
-	Fixed second = b.getX() * (c.getY() - a.getY());
-	Fixed third = c.getX() * (a.getY() - b.getY());
+	Fixed ax = b.getX() - a.getX();
+	Fixed ay = b.getY() - a.getY();
+	Fixed bx = c.getX() - a.getX();
+	Fixed by = c.getY() - a.getY();
 
-	Fixed area = std::abs(first.toFloat() + second.toFloat() + third.toFloat());
-	return (area / 2);
+	return ax * by - ay * bx;
 }
 bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed triangle = area(a, b, c);
-	Fixed pbc = area(point, b, c);
-	Fixed pac = area(a, point, c);
-	Fixed pab = area(a, b, point);
-	std::cout << triangle << std::endl;
-	std::cout << pbc + pac + pab << std::endl;
-	return (pbc + pac + pab) <= triangle;
+	Fixed crossABP = crossProduct(a, b, point);
+	Fixed crossBCP = crossProduct(b, c, point);
+	Fixed crossCAP = crossProduct(c, a, point);
+
+	std::cout << "ABP: " << crossABP << std::endl;
+	std::cout << "BCP: " << crossBCP << std::endl;
+	std::cout << "CAP: " << crossCAP << std::endl;
+
+	 // Check if any cross product is zero (point is on an edge)
+	bool onEdge = (crossABP == 0 || crossBCP == 0 || crossCAP == 0);
+	// Check if all cross products have the same sign (positive or negative)
+	bool inside = ((crossABP > 0 && crossBCP > 0 && crossCAP > 0) ||
+					(crossABP < 0 && crossBCP < 0 && crossCAP < 0));
+	return inside && !onEdge;
 }

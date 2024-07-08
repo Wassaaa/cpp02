@@ -5,9 +5,9 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main(void) {
 	Point first(0, 0);
-	Point second(0, 52);
-	Point third(10, 2);
-	Point point(-1, 0);
+	Point second(5, 0);
+	Point third(0, 8);
+	Point point(1, 1);
 	if (bsp(first, second, third, point))
 	{
 		std::cout << "TRUE \nPoint " << point.print() << " is inside triangle ";
