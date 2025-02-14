@@ -135,7 +135,7 @@ bool	Fixed::operator==(const Fixed& other) const
 
 bool	Fixed::operator!=(const Fixed& other) const
 {
-	return this->number == other.number;
+	return this->number != other.number;
 }
 
 /*

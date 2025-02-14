@@ -2,36 +2,36 @@
 
 Fixed::Fixed()
 {
-	// std::cout << "Default constructor called\n";
+	std::cout << "Default constructor called\n";
 	number = 0;
 }
 
 Fixed::Fixed(const int nbr)
 {
-	// std::cout << "Int constructor called\n";
+	std::cout << "Int constructor called\n";
 	number = nbr << bits;
 }
 
 Fixed::Fixed(const float nbr)
 {
-	// std::cout << "Float constructor called\n";
+	std::cout << "Float constructor called\n";
 	number = std::roundf(nbr * (1 << bits));
 }
 
 Fixed::~Fixed()
 {
-	// std::cout << "Destructor called\n";
+	std::cout << "Destructor called\n";
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	// std::cout << "Copy Constructor called\n";
+	std::cout << "Copy Constructor called\n";
 	number = other.number;
 }
 
 Fixed& Fixed::operator=(const Fixed &other)
 {
-    // std::cout << "Copy Assignment Operator called\n";
+    std::cout << "Copy Assignment Operator called\n";
 	if (this == &other)
 		return (*this);
 	number = other.number;
@@ -40,7 +40,7 @@ Fixed& Fixed::operator=(const Fixed &other)
 
 int Fixed::getRawBits(void) const
 {
-	// std::cout << "getRawBits member function called\n";
+	std::cout << "getRawBits member function called\n";
 	return number;
 }
 
@@ -135,7 +135,7 @@ bool	Fixed::operator==(const Fixed& other) const
 
 bool	Fixed::operator!=(const Fixed& other) const
 {
-	return this->number == other.number;
+	return this->number != other.number;
 }
 
 /*
