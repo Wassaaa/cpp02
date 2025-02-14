@@ -1,12 +1,12 @@
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-Fixed crossProduct(const Point& a, const Point& b, const Point& c)
+Fixed crossProduct(const Point& a, const Point& b, const Point& point)
 {
 	Fixed ax = b.getX() - a.getX();
 	Fixed ay = b.getY() - a.getY();
-	Fixed bx = c.getX() - a.getX();
-	Fixed by = c.getY() - a.getY();
+	Fixed bx = point.getX() - a.getX();
+	Fixed by = point.getY() - a.getY();
 
 	return ax * by - ay * bx;
 }
